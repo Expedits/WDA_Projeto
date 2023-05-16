@@ -86,7 +86,7 @@
                     <div>
                       <label for="usuario"> Nome usuario:</label>
                     <select name="usuario" id="" style="width:180px; border: 0.5px solid black;">
-                        <option value="cu">Usuário que alugou:</option>
+                        <option value="usuario">Usuário que alugou:</option>
                         <?php 
                             while($user_data = mysqli_fetch_assoc($resultuser_conect)){
                                 echo "<option>".$user_data['nome']."</option>";
