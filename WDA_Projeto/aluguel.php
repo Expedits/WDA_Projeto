@@ -86,7 +86,7 @@
                     <div>
                       <label for="usuario"> Nome usuario:</label>
                     <select name="usuario" id="" style="width:180px; border: 0.5px solid black;">
-                        <option value="usuario">Usuário que alugou:</option>
+                        <option value="selecionar">Usuário que alugou:</option>
                         <?php 
                             while($user_data = mysqli_fetch_assoc($resultuser_conect)){
                                 echo "<option>".$user_data['nome']."</option>";
@@ -153,12 +153,14 @@
   <tbody>
     <?php
     while($aluguel_data = mysqli_fetch_assoc($result)){
+        $data1=date("d/m/Y",strtotime($aluguel_data['data_aluguel'])); 
+        $data2=date("d/m/Y",strtotime($aluguel_data['prev_devo'])); 
       echo "<tr>";
       echo "<td>".$aluguel_data['id']."</td>";
       echo "<td>".$aluguel_data['usuario']."</td>";
       echo "<td>".$aluguel_data['livro']."</td>";
-      echo "<td>".$aluguel_data['data_aluguel']."</td>";
-      echo "<td>".$aluguel_data['prev_devo']."</td>";  
+      echo "<td>".$data1."</td>";
+      echo "<td>".$data2."</td>";  
       
       if($aluguel_data['data_devo'] == 0){   
         echo "<td>Não Devolvido</td>";
