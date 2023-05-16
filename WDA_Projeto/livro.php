@@ -148,11 +148,12 @@
   <tbody>
     <?php
     while($user_data = mysqli_fetch_assoc($result)){
+      $data=date("d/m/Y",strtotime($user_data['data_livro'])); 
       echo "<tr>";
       echo "<td>".$user_data['id']."</td>";
       echo "<td>".$user_data['nome']."</td>";
       echo "<td>".$user_data['editora']."</td>";
-      echo "<td>".$user_data['data_livro']."</td>";
+      echo "<td>".$data."</td>";
       echo "<td>".$user_data['autor']."</td>";
       echo "<td>".$user_data['estoque']."</td>";
       echo "<td>
